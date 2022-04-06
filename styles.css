@@ -27,11 +27,18 @@
     font-family: HKGroteskBlack, Arial, Helvetica, sans-serif;
     font-size: 12pt;
   }
+  body {
+    overflow-x: hidden;
+  }
+  h3 {
+    font-size: 35pt;
+  }
   .nav {
     -webkit-filter: drop-shadow(0px 1px 4px rgba(128, 128, 128, 0.189));
             filter: drop-shadow(0px 1px 4px rgba(128, 128, 128, 0.189));
     background: white;
     position: fixed;
+    top: 0%;
     width: 100%;
     height: 17vh;
     display: -webkit-box;
@@ -167,7 +174,7 @@
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .button, .navCont > div:nth-of-type(3) div button:nth-of-type(1), .navCont > div:nth-of-type(3) div button:nth-of-type(2), header .headerCont button {
+  .button, .navCont > div:nth-of-type(3) div button:nth-of-type(1), .navCont > div:nth-of-type(3) div button:nth-of-type(2), header .headerCont button, .meetKitchen .meetKitCont div:nth-of-type(1) button:nth-of-type(1), .meetKitchen .meetKitCont div:nth-of-type(1) button:nth-of-type(2) {
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -219,6 +226,7 @@
     background: #1D1C1D;
     -webkit-transition: 0.5s ease;
     transition: 0.5s ease;
+    border: 2px solid transparent;
   }
   .navCont > div:nth-of-type(3) div button:nth-of-type(2):hover {
     border: 2px solid black;
@@ -245,6 +253,10 @@
     cursor: pointer;
   }
   .hamburger {
+    display: none;
+  }
+  /*MOBILE MENU*/
+  .mobileMenu {
     display: none;
   }
   /*HEADER*/
@@ -308,191 +320,550 @@
   header .headerCont p {
     width: 50%;
   }
-}
-
-.product {
-  position: fixed;
-  top: 12%;
-  height: 68vh;
-  width: 350px;
-  opacity: 0;
-  background-color: white;
-  z-index: 200;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-  left: 22.5%;
-  border-radius: 5px;
-  -webkit-filter: drop-shadow(5px 10px 15px rgba(128, 128, 128, 0.133));
-          filter: drop-shadow(5px 10px 15px rgba(128, 128, 128, 0.133));
-  padding-top: 15px;
-  border: 1px solid gray;
-}
-
-.product ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 10px;
-}
-
-.product ul li {
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  cursor: pointer;
-  border-left: transparent 0px solid;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-  padding: 1px 10px;
-}
-
-.product ul li span:nth-of-type(2) {
-  color: gray;
-  font-family: HKGroteskRegular;
-}
-
-.product ul li span {
-  line-height: 1.5rem;
-}
-
-.product ul li:hover {
-  background-color: rgba(128, 128, 128, 0.099);
-  border-left: transparent 5px solid;
-}
-
-/*HERO IMAGES*/
-.heroImages {
-  position: absolute;
-  top: 90vh;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 10px;
-}
-
-.heroImages #hero-before,
-.heroImages #hero-after {
-  -ms-flex-preferred-size: 43%;
-      flex-basis: 43%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.heroImages #hero-before img,
-.heroImages #hero-after img {
-  width: 100%;
-}
-
-.heroImages div:nth-of-type(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-preferred-size: auto;
-      flex-basis: auto;
-}
-
-.heroImages div:nth-of-type(2) hr {
-  background: rgba(128, 128, 128, 0.355);
-  border: none;
-  width: 1.3px;
-  height: 100px;
-}
-
-.heroImages div:nth-of-type(2) span {
-  color: #1D1C1D;
-}
-
-/*Cookies*/
-.cookie {
-  background: #1D1C1D;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 20px;
-  padding: 25px 20px;
-  position: fixed;
-  top: 98%;
-  left: 98%;
-  -webkit-transform: translate(-100%, -100%);
-          transform: translate(-100%, -100%);
-  -webkit-transition: 0.7s ease;
-  transition: 0.7s ease;
-  z-index: 202;
-  width: 400px;
-  border-radius: 5px;
-}
-
-.cookie p {
-  color: white;
-  font-family: HKGroteskRegular;
-  width: 98%;
-  font-size: 12pt;
-  line-height: 1.4rem;
-}
-
-.cookie p a {
-  color: white;
-  font-family: HKGroteskRegular;
-  font-size: 12pt;
-}
-
-.cookie div button {
-  padding: 10px 10px;
-  background: white;
-  color: #1D1C1D;
-  border: none;
-  border-radius: 3px;
-  font-family: HKGroteskBold;
-  border: 2px solid transparent;
-  border-radius: 3px;
-  -webkit-transition: 0.7s ease;
-  transition: 0.7s ease;
-  cursor: pointer;
-}
-
-.cookie div button:hover {
-  background: #1D1C1D;
-  color: white;
-  border: 2px solid white;
+  .product {
+    position: fixed;
+    top: 12%;
+    height: 78vh;
+    width: 350px;
+    opacity: 0;
+    background-color: white;
+    z-index: 200;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    left: 22.5%;
+    border-radius: 5px;
+    -webkit-filter: drop-shadow(5px 10px 15px rgba(128, 128, 128, 0.133));
+            filter: drop-shadow(5px 10px 15px rgba(128, 128, 128, 0.133));
+    padding-top: 15px;
+    border: 1px solid gray;
+  }
+  .product ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+  }
+  .product ul li {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    cursor: pointer;
+    border-left: transparent 0px solid;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    padding: 1px 10px;
+  }
+  .product ul li span:nth-of-type(2) {
+    color: gray;
+    font-family: HKGroteskRegular;
+  }
+  .product ul li span {
+    line-height: 1.5rem;
+  }
+  .product ul li:hover {
+    background-color: rgba(128, 128, 128, 0.099);
+    border-left: transparent 5px solid;
+  }
+  /*HERO IMAGES*/
+  .heroImages {
+    position: relative;
+    top: 90vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 10px;
+  }
+  .heroImages #hero-before,
+  .heroImages #hero-after {
+    -ms-flex-preferred-size: 43%;
+        flex-basis: 43%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .heroImages #hero-before img,
+  .heroImages #hero-after img {
+    width: 100%;
+  }
+  .heroImages div:nth-of-type(2) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+  .heroImages div:nth-of-type(2) hr {
+    background: rgba(128, 128, 128, 0.355);
+    border: none;
+    width: 1.3px;
+    height: 100px;
+  }
+  .heroImages div:nth-of-type(2) span {
+    color: #1D1C1D;
+  }
+  /*Cookies*/
+  .cookie {
+    background: #1D1C1D;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+    padding: 25px 20px;
+    position: fixed;
+    top: 98%;
+    left: 98%;
+    -webkit-transform: translate(-100%, -100%);
+            transform: translate(-100%, -100%);
+    -webkit-transition: 0.7s ease;
+    transition: 0.7s ease;
+    z-index: 202;
+    width: 400px;
+    border-radius: 5px;
+  }
+  .cookie p {
+    color: white;
+    font-family: HKGroteskRegular;
+    width: 98%;
+    font-size: 12pt;
+    line-height: 1.4rem;
+  }
+  .cookie p a {
+    color: white;
+    font-family: HKGroteskRegular;
+    font-size: 12pt;
+  }
+  .cookie div button {
+    padding: 10px 10px;
+    background: white;
+    color: #1D1C1D;
+    border: none;
+    border-radius: 3px;
+    font-family: HKGroteskBold;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    -webkit-transition: 0.7s ease;
+    transition: 0.7s ease;
+    cursor: pointer;
+  }
+  .cookie div button:hover {
+    background: #1D1C1D;
+    color: white;
+    border: 2px solid white;
+  }
+  .testimonials {
+    position: relative;
+    top: 100vh;
+    background: #F8F6F4;
+    height: 35vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 27px;
+  }
+  .testimonials h3 {
+    font-size: 15pt;
+  }
+  .testimonials div > div > img {
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+    width: 110px;
+  }
+  .testimonials div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 80%;
+  }
+  .testimonials div div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 15px;
+  }
+  .testimonials div div span {
+    font-size: 9pt;
+    color: gray;
+    font-family: HKGroteskRegular;
+  }
+  /*Meet Kitchen*/
+  .meetKitchen {
+    position: relative;
+    top: 100vh;
+    height: 150vh;
+    padding-top: 150px;
+    width: 100%;
+  }
+  .meetKitchen .meetKitCont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  .meetKitchen .meetKitCont h3 {
+    font-size: 35pt;
+    width: 50%;
+    text-align: center;
+  }
+  .meetKitchen .meetKitCont p {
+    font-family: HKGroteskRegular;
+    font-size: 15pt;
+    width: 50%;
+    text-align: center;
+  }
+  .meetKitchen .meetKitCont div:nth-of-type(1) {
+    margin-top: 40px;
+    margin-bottom: -25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .meetKitchen .meetKitCont div:nth-of-type(1) button:nth-of-type(1) {
+    padding-bottom: 15px;
+    border: 2px solid #1D1C1D;
+    background: #1D1C1D;
+    color: white;
+    font-family: HKGroteskBold;
+    border-radius: 5px 0px 0px 0px;
+  }
+  .meetKitchen .meetKitCont div:nth-of-type(1) button:nth-of-type(2) {
+    padding-bottom: 15px;
+    background: white;
+    color: #1D1C1D;
+    border: 2px solid #1D1C1D;
+    font-family: HKGroteskBold;
+    border-radius: 0px 5px 0px 0px;
+  }
+  .meetKitchen .meetKitCont div:nth-of-type(2) {
+    margin-top: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+  .meetKitchen img {
+    -webkit-filter: drop-shadow(3px 11px 10px rgba(128, 128, 128, 0.268));
+            filter: drop-shadow(3px 11px 10px rgba(128, 128, 128, 0.268));
+  }
+  #agencyViewImg {
+    width: 70%;
+    display: block;
+  }
+  #clientViewImg {
+    width: 70%;
+    display: none;
+  }
+  .info {
+    position: relative;
+    top: 115vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .info div {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: #F8F6F4;
+  }
+  .info div p {
+    text-align: center;
+    color: #1D1C1D;
+    font-size: 25pt;
+    width: 60%;
+    background: #F8F6F4;
+    padding: 85px 0px 55px 0px;
+    width: 60%;
+  }
+  .info #roughBorder {
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+  .howKitchenHelps {
+    padding: 140px 0px;
+    background: white;
+    position: relative;
+    top: 111vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
+  .howKitchenHelps #hkH1 {
+    width: 100%;
+  }
+  .howKitchenHelps #hkH1 p {
+    text-align: center;
+  }
+  .howKitchenHelps #hkH1 h3 {
+    text-align: center;
+  }
+  .howKitchenHelps #hkH2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    gap: 50px;
+    padding: 0px 120px;
+    width: 100%;
+  }
+  .howKitchenHelps #hkH2 img {
+    border-radius: 5px;
+    width: 550px;
+    height: auto;
+  }
+  .howKitchenHelps #hkH2 div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+  .howKitchenHelps #hkH2 div h3 {
+    width: 80%;
+  }
+  .howKitchenHelps #hkH2 div h3 > em {
+    font-size: 35pt;
+  }
+  .howKitchenHelps #hkH2 div p {
+    font-family: HKGroteskRegular;
+    font-size: 15pt;
+  }
+  .howKitchenHelps #hkH2 div div > h4 {
+    font-size: 15pt;
+  }
+  .howKitchenHelps #hkH2 div div > ul {
+    margin-top: -15px;
+  }
+  .howKitchenHelps #hkH2 div div > ul li {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px;
+    padding: 15px 0px;
+  }
+  .howKitchenHelps #hkH2 div div > ul li span {
+    font-size: 15pt;
+    font-family: HKGroteskRegular;
+  }
+  .howKitchenHelps #hkH2 #hkH2Learn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .howKitchenHelps #hkH2 #hkH2Learn a {
+    color: #ED553B;
+  }
+  .howKitchenHelps #hkH2 #hkH2Learn a:hover {
+    text-decoration: none;
+  }
+  .howKitchenHelps #hkH2 #hkH2Learn a:hover + i {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  .howKitchenHelps #hkH2 #hkH2Learn i {
+    text-decoration: none;
+    color: #ED553B;
+  }
+  .blockTestimonial {
+    position: relative;
+    top: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px;
+  }
+  .blockTestimonial div:nth-of-type(1) {
+    background: white;
+    padding: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  .blockTestimonial div:nth-of-type(1) img {
+    width: 80px;
+  }
+  .blockTestimonial div:nth-of-type(2) {
+    width: 70%;
+    border: 1px solid #80808072;
+    padding: 55px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+  }
+  .blockTestimonial div:nth-of-type(2) h4 {
+    text-align: center;
+    font-size: 15pt;
+    width: 75%;
+  }
+  .blockTestimonial div:nth-of-type(2) p {
+    width: 50%;
+    text-align: center;
+    font-family: HKGroteskRegular;
+  }
+  #bottomFoot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #bottomFoot span {
+    font-family: HKGroteskRegular;
+  }
 }
 
 @media (max-width: 1170px) {
@@ -624,7 +995,8 @@
             justify-content: space-between;
     cursor: pointer;
   }
-  .mobileMenuCont div:not(div:nth-of-type(1)), .mobileMenuCont .prodCont {
+  .mobileMenuCont div:not(div:nth-of-type(1)),
+  .mobileMenuCont .prodCont {
     border-bottom: 1.5px solid rgba(0, 0, 0, 0.163);
     padding: 15px 10px;
   }
@@ -707,6 +1079,92 @@
   }
   .mobileMenuCont #gademo {
     border: none;
+  }
+  .testimonials > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    gap: 20px;
+  }
+  .testimonials {
+    height: 65vh;
+  }
+  .testimonials div div:nth-of-type(1) > img {
+    width: 90px;
+    height: auto;
+  }
+  .testimonials div div:nth-of-type(2) > img {
+    width: 125px;
+    height: auto;
+  }
+  .testimonials div div:nth-of-type(4) > img {
+    width: 150px;
+    height: auto;
+  }
+  .testimonials div > div > span {
+    margin-top: -5px;
+  }
+  #agencyViewImg {
+    width: 100%;
+  }
+  #clientViewImg {
+    width: 100%;
+  }
+  .howKitchenHelps {
+    width: 100%;
+  }
+  .howKitchenHelps #hkH1 {
+    width: 100%;
+  }
+  .howKitchenHelps #hkH2 {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .howKitchenHelps #hkH2 div h5 {
+    text-align: center;
+  }
+  .howKitchenHelps #hkH2 div h3 {
+    text-align: center;
+    width: 100%;
+  }
+  .howKitchenHelps #hkH2 div p {
+    text-align: center;
+  }
+  .howKitchenHelps #hkH2 div div > h4 {
+    text-align: center;
+  }
+  .howKitchenHelps #hkH2 div div > ul > li {
+    text-align: center;
+    width: 100%;
+  }
+  .howKitchenHelps #hkH2 div #hkH2Learn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 /*# sourceMappingURL=styles.css.map */
